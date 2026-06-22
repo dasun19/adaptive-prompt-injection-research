@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+*.env
+.env
+.env.local
+venv/
+.venv/
+*.egg-info/
+dist/
+.ipynb_checkpoints/
+experiments/logs/*.log
+data/datasets/*.csv
+# API keys — never commit these!
+secrets.yaml
+api_keys.txt
