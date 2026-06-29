@@ -1,0 +1,109 @@
+# ============================================================
+# Adaptive Prompt Injection in Multi-Agent Workflows
+# Author: Dasun Cooray | Undergraduate CS, Sri Lanka
+# Note: Local CPU setup — GPU work done on Google Colab / Kaggle
+# ============================================================
+
+
+# ------------------------------------------------------------
+# Multi-Agent Frameworks  (Phase 1 & 2)
+# ------------------------------------------------------------
+autogen-agentchat>=0.4.0        # AutoGen v0.4 — sequential & hierarchical agents
+autogen-core>=0.4.0             # AutoGen core runtime
+autogen-ext>=0.4.0              # AutoGen extensions (tools, memory)
+langchain>=0.3.0                # LangChain v0.3 — AgentExecutor / chains
+langchain-huggingface>=0.1.0    # LangChain × HuggingFace models
+langchain-community>=0.3.0      # LangChain community tools & loaders
+langchain-ollama>=0.1.0         # LangChain Ollama chat model wrapper
+langgraph>=0.2.0                # LangGraph state-machine workflows
+
+
+# ------------------------------------------------------------
+# Llama via Free APIs  (no GPU needed)
+# ------------------------------------------------------------
+groq>=0.11.0                    # Groq API — free Llama 3.1 70B, very fast
+huggingface-hub>=0.25.0         # HuggingFace Inference API + model downloads
+transformers>=4.45.0            # Tokenizers, model configs, local small models
+tokenizers>=0.20.0
+sentencepiece>=0.2.0            # Required by Llama tokenizer
+
+
+# ------------------------------------------------------------
+# PyTorch  (CPU only — for ART & peft logic; training on Colab)
+# ------------------------------------------------------------
+torch>=2.4.0                    # CPU install: just run  pip install torch
+datasets>=3.0.0                 # Dataset management (6,000-run results)
+
+
+# ------------------------------------------------------------
+# Adaptive Attack Framework  (Phase 1 — heavy training on Colab)
+# ------------------------------------------------------------
+peft>=0.13.0                    # LoRA — run training cells on Colab, not locally
+adversarial-robustness-toolbox>=1.18.0  # ART — adversarial utilities
+optuna>=4.0.0                   # Tree-of-Parzen-Estimator (string evolution)
+scipy>=1.14.0                   # Optimization helpers
+
+
+# ------------------------------------------------------------
+# Experiment Tracking & Logging
+# ------------------------------------------------------------
+mlflow>=2.16.0                  # Fully local — track ASR metrics, runs, artifacts
+
+
+# ------------------------------------------------------------
+# Data Science & Analysis
+# ------------------------------------------------------------
+numpy>=1.26.0
+pandas>=2.2.0
+scikit-learn>=1.5.0             # Metrics, confusion matrices
+statsmodels>=0.14.0             # Statistical significance (ASR comparisons)
+scipy>=1.14.0
+
+
+# ------------------------------------------------------------
+# Visualization
+# ------------------------------------------------------------
+matplotlib>=3.9.0
+seaborn>=0.13.0                 # Heatmaps (ASR per hop × architecture)
+plotly>=5.24.0                  # Interactive propagation charts
+
+
+# ------------------------------------------------------------
+# Jupyter Notebooks
+# ------------------------------------------------------------
+jupyter>=1.1.0
+ipykernel>=6.29.0
+ipywidgets>=8.1.0
+
+
+# ------------------------------------------------------------
+# Utilities
+# ------------------------------------------------------------
+python-dotenv>=1.0.0            # Store GROQ_API_KEY and HF_TOKEN in .env
+pyyaml>=6.0.2                   # Experiment config files
+requests>=2.32.0                # General HTTP requests
+tenacity>=9.0.0                 # Retry logic for API calls
+tqdm>=4.66.0                    # Progress bars for experiment runs
+rich>=13.8.0                    # Terminal output & tables
+loguru>=0.7.0                   # Structured logging to experiments/logs/
+click>=8.1.0                    # CLI for running experiment scripts
+omegaconf>=2.3.0                # Hierarchical config management
+
+
+# ------------------------------------------------------------
+# Testing
+# ------------------------------------------------------------
+pytest>=8.3.0
+pytest-asyncio>=0.24.0          # Async tests for multi-agent flows
+pytest-cov>=5.0.0               # Coverage reports
+
+
+# ------------------------------------------------------------
+# Defenses — to be added later (Phase 3 & 4)
+# ------------------------------------------------------------
+# boto3                         # AWS Bedrock Guardrails
+# azure-ai-contentsafety        # Azure Prompt Shield
+# azure-identity
+# open-policy-agent             # Zero Trust policy enforcement
+# pyjwt                         # Inter-agent authorization tokens
+# cryptography
